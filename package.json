@@ -9,8 +9,7 @@
     "lint": "eslint",
     "build:services": "cd packages/services && pnpm build",
     "dev:services": "cd packages/services && pnpm dev",
-    "clean": "if exist packages\\services\\dist rmdir /s /q packages\\services\\dist",
-    "prebuild": "pnpm build:services"
+    "clean": "rm -rf packages/services/dist || true"
   },
   "dependencies": {
     "@dataceuticals/services": "workspace:*",

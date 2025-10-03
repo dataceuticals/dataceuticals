@@ -15,8 +15,7 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "lint": "eslint src/**/*.ts",
-    "clean": "if exist dist rmdir /s /q dist",
-    "prebuild": "npm run clean"
+    "clean": "rm -rf dist || true"
   },
   "dependencies": {
     "firebase": "^10.7.0"
