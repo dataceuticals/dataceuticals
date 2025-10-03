@@ -1,0 +1,42 @@
+{
+  "name": "dataceuticals",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "build:services": "cd packages/services && pnpm build",
+    "dev:services": "cd packages/services && pnpm dev",
+    "clean": "if exist packages\\services\\dist rmdir /s /q packages\\services\\dist",
+    "prebuild": "pnpm build:services"
+  },
+  "dependencies": {
+    "@dataceuticals/services": "workspace:*",
+    "@tiptap/extension-image": "^2.1.0",
+    "@tiptap/extension-link": "^2.1.0",
+    "@tiptap/extension-text-align": "^2.1.0",
+    "@tiptap/extension-underline": "^2.1.0",
+    "@tiptap/react": "^2.1.0",
+    "@tiptap/starter-kit": "^2.1.0",
+    "firebase": "^10.7.0",
+    "lucide-react": "^0.294.0",
+    "next": "15.5.2",
+    "razorpay": "^2.9.6",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "resend": "^6.1.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
