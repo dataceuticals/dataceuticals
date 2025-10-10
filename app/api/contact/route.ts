@@ -126,7 +126,10 @@ export async function POST(request: NextRequest) {
           <p><strong>Subject:</strong> ${subject || 'No subject'}</p>
           <p><strong>Message:</strong></p>
           <p>${message.replace(/\n/g, '<br>')}</p>
-          <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
+          <p><strong>Submitted:</strong> ${contactData.country === 'India' ? 
+            new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }) + ' (IST)' :
+            `${new Date().toLocaleString()} (User Local) | UTC: ${new Date().toISOString().replace('T', ' ').slice(0, -5)} | IST: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`
+          }</p>
           
           <hr>
           <h4>📍 Technical Details</h4>
